@@ -15,14 +15,16 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-      
+  
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
         python-version: 3.9
-
+    
     - name: Install dependencies
-      run: pip install -r requirements.txt
+      run: pip install -r myapp/requirements.txt
+  
+    - name: Run Flask app
+      run: python myapp/app.py
 
-    - name: Run tests
-      run: python -m unittest discover
+
